@@ -14,7 +14,6 @@ export default class Movieslist extends Component {
                         <button type='button' className='btn btn-md btn-outline-danger'>Delete</button>
                         <h2><span className='badge bg-info'>8</span></h2>
                     </div>
-
                 </div>
             </div>
         </div>
