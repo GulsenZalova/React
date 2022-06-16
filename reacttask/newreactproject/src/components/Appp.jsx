@@ -38,7 +38,7 @@ import MoviesList from "./MoviesList"
             <SearchBar/>
         </div>
        </div>
-       <MoviesList/>
+       <MoviesList movies={this.state.movies}/>
    </div>
         
       )

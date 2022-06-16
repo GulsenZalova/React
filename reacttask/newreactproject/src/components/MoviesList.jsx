@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 
-export default class Movieslist extends Component {
-  render() {
+ const Movieslist = (props) => {
     return (
       <div className='row'>
-        <div className='col-lg-4'>
-            <div className='card mb-4 shadow-sm'>
-                <img src="https://m.media-amazon.com/images/I/51NTDn8HT6L.jpg" className='card-img-top'    alt="Sample Movie" />
-                <div className='card-body'>
-                    <h5 className='card-title'>Sample Movie</h5>
-                    <p className='card-text'>Smple Movie Description</p>
-                    <div className='d-flex justify-content-between align-items-center'>
-                        <button type='button' className='btn btn-md btn-outline-danger'>Delete</button>
-                        <h2><span className='badge bg-info'>8</span></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {props.movies.map((movie)=>(
+                      <div className='col-lg-4' key={movie.id}>
+                      <div className='card mb-4 shadow-sm'>
+                          <img src={movie.imageUrl}className='card-img-top '    alt="Sample Movie" />
+                          <div className='card-body'>
+                              <h5 className='card-title'>{movie.name}</h5>
+                              <p className='card-text'>{movie.overview}</p>
+                              <div className='d-flex justify-content-between align-items-center'>
+                                  <button type='button' className='btn btn-md btn-outline-danger'>Delete</button>
+                                  <h2><span className='badge bg-info'>{movie.rating}</span></h2>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            ))}
       </div>
     )
-  }
+
 }
+export default Movieslist
