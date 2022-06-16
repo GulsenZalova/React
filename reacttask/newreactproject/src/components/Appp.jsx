@@ -30,6 +30,19 @@ import MoviesList from "./MoviesList"
          }
       ]
    }
+
+   deletemovie=(movie)=>{
+      const newmovieslist=this.state.movies.filter(
+         m => m.id !== movie.id
+      )
+
+      this.setState({
+         movies:newmovieslist
+      })
+   }
+    
+
+
     render(){
       return (
    <div className="container">
@@ -38,7 +51,9 @@ import MoviesList from "./MoviesList"
             <SearchBar/>
         </div>
        </div>
-       <MoviesList movies={this.state.movies}/>
+       <MoviesList movies={this.state.movies}
+       deletemoviesprops={this.deletemovie}
+       />
    </div>
         
       )
