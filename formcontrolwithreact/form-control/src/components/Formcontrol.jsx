@@ -22,6 +22,7 @@ export default class Formcontrol extends Component {
   {
     const isLoggedIn =this.state.isLoggedIn
     let button;
+    
     if(isLoggedIn){
       button= <LogoutButton onClick={this.handleLogoutClick}/>
     }else{
