@@ -3,7 +3,7 @@ import { useState } from 'react'
 const FunksiyaComponent= () => {
     const[Counter, setCounter]=useState(0)
 
-    const azalt=()=>{
+    const azalt = () =>{
         setCounter(Counter-1)
     }
     return(
@@ -11,7 +11,7 @@ const FunksiyaComponent= () => {
     <div>
             <h1>Function Component</h1>
             <p>Counter: {Counter}</p>
-            <button onClick={()=>setCounter()}>Azalt</button>
+            <button onClick={()=>azalt()}>Azalt</button>
     </div>
 
 
