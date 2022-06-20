@@ -6,11 +6,12 @@ import FunksiyaComponent from './components/funksiyacomponent'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [show, setShow]=useState(true)
   return (
     <div className="App">
+      <button onClick={()=> setShow(!show)}>Toggle</button>
       <FunksiyaComponent/>
-      <Classcomponent/>
+     {show ? <Classcomponent/> : <div/>}
     </div>
   )
 }

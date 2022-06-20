@@ -4,14 +4,22 @@ import { useState } from 'react'
 const FunksiyaComponent= () => {
     const[Counter, setCounter]=useState(0)
     const[Counter2, setCounter2]=useState(0)
+    const[timer, setTimer]=useState(0)
     
     useEffect(()=>{
         console.log("Yükləndi")
         console.log("Update olundu")
     },[Counter,Counter2])
+
     const azalt = () =>{
         setCounter(Counter-1)
     }
+
+    useEffect(()=>{
+        const myTimer=setInterval(()=>{
+            setCounter(timer+1)
+        })
+    })
     return(
     <div>
             <h1>Function Component</h1>
