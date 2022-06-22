@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Userlist from './components/UserList'
+import { UserContext } from './Contexts/UserContext'
 
 function App() {
  const data =[
@@ -16,10 +17,12 @@ const changeColor = (id, color)=>{
 )
 }
   return (
+    <UserContext.Provider value={{users,changeColor}}>
     <div className="App">
       <h1>Welcome</h1>
-       <Userlist users={users} changeColor={changeColor}/>
+       <Userlist />
     </div>
+    </UserContext.Provider>
   )
 }
 

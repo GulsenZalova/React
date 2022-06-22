@@ -1,6 +1,11 @@
 import React  from "react";
+import { useContext } from "react";
+import { UserContext } from "../Contexts/UserContext";
 
-const User= ({user,changeColor})=>{
+
+const User= ({user})=>{
+    const change=useContext(UserContext)
+    console.log(change)
 return(
     <div style={{backgroundColor:user.color}}>
         <h4>User:{user.name}</h4>
@@ -9,7 +14,7 @@ return(
         Color:{" "}
         <input type="text"
         value={user.color}
-        onChange={e => changeColor(user.id, e.target.value)}
+        onChange={e => change.changeColor(user.id, e.target.value)}
         />
     </div>
 )
