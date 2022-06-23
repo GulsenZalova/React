@@ -3,11 +3,19 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
- const inputRef=useRef(null)
+// Componentlərdə istifadə olunan reflər
+const inputRef=useRef(null)
 const divRef=useRef(0)
+const countRef=useRef(0)
+
+const [name, setName]=useState(" ")
 useEffect(()=>{
 console.log(inputRef.current)
 console.log(divRef)
+})
+
+useEffect(()=>{
+  countRef.current=countRef.current+1
 })
 
 const inputuFokusla=()=>{
@@ -29,6 +37,8 @@ const diviKliklə=()=>{
       <input type="text" ref={inputRef} style={{ width: "50%"}} />
       <button onClick={inputuFokusla}>Kliklə</button>
       <button onClick={diviKliklə}>Kliklə 2</button>
+      <input type="text" onChange={e => setName(e.target.value)} />
+      {`Inputa daxil edilən dəyərin ümumi sayı ${countRef.current}`}
       </div>
     </div>
   )
