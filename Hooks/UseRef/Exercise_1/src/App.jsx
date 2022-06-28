@@ -3,12 +3,14 @@ import { useState } from 'react'
 import './App.css'
 import MyInput from './input'
 
+
 function App() {
 // Componentlərdə istifadə olunan reflər
 const inputRef=useRef(null)
 const divRef=useRef(0)
 const countRef=useRef(0)
 const elementRef=useRef(null)
+
 
 const [name, setName]=useState(" ")
 useEffect(()=>{
@@ -36,6 +38,7 @@ const diviKliklə=()=>{
 const elementiFocusla=()=>{
   elementRef.current.focus()
 }
+
 
   return (
     <div className="App">

@@ -1,14 +1,12 @@
 import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
-import Appp from "./components/Appp"
+import Common from './components/Common'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-    <Appp/>
+    <Common/>
     </div>
   )
 }
