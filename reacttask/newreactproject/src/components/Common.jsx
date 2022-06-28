@@ -33,7 +33,11 @@ class Common extends React.Component{
                 "overview":"Kino 4in mezmunu",
                 "imageURL":"https://cdn1.ntv.com.tr/gorsel/abG_4kFMnkKVhAALHnfwWg.jpg?width=1000&mode=crop&scale=both"
             },
-        ]
+        ],
+
+        
+        searchQuery: ""
+        
     }
      
     deleteMovie=(movie)=>{
@@ -49,16 +53,27 @@ class Common extends React.Component{
             movies:newMoviesList
         }))
     }
+
+    searchMovie=(e)=>{
+        this.setState({
+            searchQuery: e.target.value
+        })
+    }
    
     render(){
+
+       const filteredMovie=this.state.movies.filter(
+        (movie)=>{
+            return movie.name.toLowerCase().includes(this.state.searchQuery.toLowerCase()) === true
+        })
         return (
             <div className="container"> 
                 <div className="row">
                     <div className="col-lg-12">
-                        <SearchBar/>
+                        <SearchBar searchMovieProp={this.searchMovie}/>
                     </div>
                 </div>
-                <MovieList movies={this.state.movies}
+                <MovieList movies={filteredMovie}
                 deleteMovieProp={this.deleteMovie}/>
             </div>
         )
