@@ -41,9 +41,13 @@ class Common extends React.Component{
             m => m.id !== movie.id
         )
 
-        this.setState({
+        // this.setState({
+        //     movies:newMoviesList
+        // })
+
+        this.setState(state=>({
             movies:newMoviesList
-        })
+        }))
     }
    
     render(){
