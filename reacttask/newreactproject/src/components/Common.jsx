@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import React  from "react";
 import MovieList from "./MovieList"
 import SearchBar from "./SearchBar"
@@ -10,14 +11,20 @@ class Common extends React.Component{
     }
      
     async componentDidMount(){
-        const baseURL="http://localhost:3002/movies"
-        const response=await fetch(baseURL)
-        const data=await response.json()
-        console.log(data)
+        // // const baseURL="http://localhost:3002/movies"
+        // // const response=await fetch(baseURL)
+        // // const data=await response.json()
+        // // console.log(data)
 
-        this.setState({
-            movies:data
-        })
+        // this.setState({
+        //     movies:data
+        // })
+
+        fetch("http://localhost:3002/movies")
+            .then((response)=>response.json())
+            .then(data=>this.setState({
+                movies:data
+            }))
     }
     
 
