@@ -2,6 +2,7 @@ import { data } from "autoprefixer";
 import React  from "react";
 import MovieList from "./MovieList"
 import SearchBar from "./SearchBar"
+import axios, { Axios } from "axios"
 
 class Common extends React.Component{
     state={
@@ -10,29 +11,45 @@ class Common extends React.Component{
         searchQuery: ""
     }
      
+    //Get with Fetch
     async componentDidMount(){
-        // // const baseURL="http://localhost:3002/movies"
-        // // const response=await fetch(baseURL)
-        // // const data=await response.json()
-        // // console.log(data)
-
-        // this.setState({
-        //     movies:data
-        // })
-
-        fetch("http://localhost:3002/movies")
-            .then((response)=>response.json())
-            .then(data=>this.setState({
-                movies:data
-            }))
+        // fetch("http://localhost:3002/movies")
+        //     .then((response)=>response.json())
+        //     .then(data=>this.setState({
+        //         movies:data
+        //     }))
     }
     
+    // Get with Axios
+    async componentDidMount(){
+        const response= await axios.get("http://localhost:3002/movies")
+        this.setState({movies:response.data})
+    }
 
-    deleteMovie=(movie)=>{
+    // Delete with Fetch
+
+    // deleteMovie= async (movie)=>{
+    //     fetch(`http://localhost:3002/movies/${movie.id}`,{
+    //         method:"DELETE"
+    //     })
+    //     const newMoviesList=this.state.movies.filter(
+    //         m => m.id !== movie.id
+    //     )
+    //     // this.setState({
+    //     //     movies:newMoviesList
+    //     // })
+
+    //     this.setState(state=>({
+    //         movies:newMoviesList
+    //     }))
+    // }
+
+    // Delete with Axios
+    deleteMovie= async (movie)=>{
+        axios.delete(`http://localhost:3002/movies/${movie.id}`)
         const newMoviesList=this.state.movies.filter(
             m => m.id !== movie.id
         )
-
         // this.setState({
         //     movies:newMoviesList
         // })
@@ -41,6 +58,7 @@ class Common extends React.Component{
             movies:newMoviesList
         }))
     }
+
 
     searchMovie=(e)=>{
         this.setState({
