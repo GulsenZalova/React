@@ -1,8 +1,10 @@
 import { data } from "autoprefixer";
 import React  from "react";
-import MovieList from "./MovieList"
-import SearchBar from "./SearchBar"
-import axios, { Axios } from "axios"
+import MovieList from "./MovieList";
+import SearchBar from "./SearchBar";
+import AddMovie from "./AddMovie";
+import axios, { Axios } from "axios";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 class Common extends React.Component{
     state={
@@ -73,15 +75,27 @@ class Common extends React.Component{
             return movie.name.toLowerCase().includes(this.state.searchQuery.toLowerCase()) === true
         })
         return (
-            <div className="container"> 
-                <div className="row">
-                    <div className="col-lg-12">
-                        <SearchBar searchMovieProp={this.searchMovie}/>
-                    </div>
-                </div>
-                <MovieList movies={filteredMovie}
-                deleteMovieProp={this.deleteMovie}/>
+            <Router>
+            <div className="container">
+                <Switch>
+                    <Route exact path='/' render={() => (
+                        <>
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <SearchBar searchMovie={this.setSearchQuery} />
+                                </div>
+                            </div>
+
+                            <MovieList
+                           
+                                movies={filteredMovie}
+                                deleteMovie={this.deleteMovie} />
+                        </>
+                    )} />
+                    <Route path="/add" component={AddMovie}/>
+                </Switch>
             </div>
+        </Router>
         )
     }
 }
