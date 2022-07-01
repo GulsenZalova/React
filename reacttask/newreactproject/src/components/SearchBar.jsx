@@ -1,4 +1,5 @@
 import React  from "react";
+import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component{
     render(){
@@ -13,10 +14,12 @@ class SearchBar extends React.Component{
                     onChange={this.props.searchMovieProp}/>
             </div>
             <div className="col-2">
-                <button type="button"
+                <Link 
+                to="/add"
+                type="button"
                  className="btn btn-md btn-danger" 
                  style={{ "display": "flex", "justifyContent": "flex-end"}}>Add Movie
-                 </button>
+                 </Link>
             </div>
         </div>
     </form>

@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import AddMovie from "./AddMovie";
 import axios, { Axios } from "axios";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Fragment } from "react";
 
 class Common extends React.Component{
     state={
@@ -68,11 +69,18 @@ class Common extends React.Component{
         })
     }
    
+    addMovie = async (movie)=>{
+      await axios.post(`http://localhost:3002/movies/`, movie) 
+       this.setState(state =>({
+        movies: state.movies.concat([movie])
+       }))
+    }
+
     render(){
 
        const filteredMovie=this.state.movies.filter(
         (movie)=>{
-            return movie.name.toLowerCase().includes(this.state.searchQuery.toLowerCase()) === true
+            return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1
         })
         return (
             <Router>
@@ -87,12 +95,20 @@ class Common extends React.Component{
                             </div>
 
                             <MovieList
-                           
                                 movies={filteredMovie}
                                 deleteMovie={this.deleteMovie} />
                         </>
-                    )} />
-                    <Route path="/add" component={AddMovie}/>
+                    )}>
+                    </Route>
+
+                    <Route  path='/add' render={({history}) => (
+                        <AddMovie
+                        onAddMovie={(movie)=>{this.addMovie(movie)
+                            history.push("/")
+                        }}
+                        />
+                    )}>
+                    </Route>
                 </Switch>
             </div>
         </Router>
