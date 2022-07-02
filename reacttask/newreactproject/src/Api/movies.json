@@ -1,39 +1,25 @@
 {
   "movies": [
     {
-      "id": 1,
-      "name": "Bad Boys for life",
-      "rating": 8.3,
-      "overview": "Kino 1in mezmunu",
-      "imageURL": "https://cdn1.ntv.com.tr/gorsel/vFwgb7p4AkuRTdsZS_ocFA.jpg?width=1000&mode=crop&scale=both"
+      "name": "Love in 40 Days ",
+      "rating": "5",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7cdnr3Bu728ukVBDMcOZ8zLrwOt.jpg",
+      "overview": "After getting involved in a fatal car crash, a competitive career woman arrives in an uncanny purgatory. While settling her unfinished businesses as a lingering spirit, she meets and finds her soulmate in a rebellious scion with a third eye.",
+      "id": 1
     },
     {
-      "id": 3,
-      "name": "RamPage",
-      "rating": 8,
-      "overview": "Kino 3in mezmunu",
-      "imageURL": "https://cdn1.ntv.com.tr/gorsel/qljKxJVP1E6XPJXobqgkrg.jpg?width=674&height=1000&mode=crop&scale=both&v=20180503042121012"
+      "name": "Pantanal ",
+      "rating": "8",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wRzDupqEtggcrs9032yNgGNxDA.jpg",
+      "overview": "After the mysterious disappearance of his father, Joventino, the cowboy José Leôncio becomes a wealthy farm owner in Pantanal. Over twenty years have passed and, bitter-hearted because of his father vanishing and the escape of his wife to Rio de Janeiro with his baby, José Leôncio has the chance to make amends with the boy, now a young man raised in the big city with very different values and habits than his own.",
+      "id": 2
     },
     {
-      "id": 4,
-      "name": "RamPage",
-      "rating": 8,
-      "overview": "Kino 3in mezmunu",
-      "imageURL": "https://cdn1.ntv.com.tr/gorsel/qljKxJVP1E6XPJXobqgkrg.jpg?width=674&height=1000&mode=crop&scale=both&v=20180503042121012"
-    },
-    {
-      "name": "aaa",
-      "rating": "2",
-      "imageURL": "aaa",
-      "overview": "aaa",
-      "id": 5
-    },
-    {
-      "name": "azerbaycan",
-      "rating": "29",
-      "imageURL": "aaaaaa",
-      "overview": "aaaaaa",
-      "id": 6
+      "name": "Ms. Marvel",
+      "rating": "9",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hJx9aFc8g32KjrW7mpv53cEvEDS.jpg",
+      "overview": "A great student, avid gamer, and voracious fan-fic scribe, Kamala Khan has a special affinity for superheroes, particularly Captain Marvel. However, she struggles to fit in at home and at school — that is, until she gets superpowers like the heroes she’s always looked up to. Life is easier with superpowers, right?",
+      "id": 3
     }
   ]
 }

@@ -4,8 +4,9 @@ import MovieList from "./MovieList";
 import SearchBar from "./SearchBar";
 import AddMovie from "./AddMovie";
 import axios, { Axios } from "axios";
+import EditMovie from "./EditMovie";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import { Fragment } from "react";
+
 
 class Common extends React.Component{
     state={
@@ -81,6 +82,8 @@ class Common extends React.Component{
        const filteredMovie=this.state.movies.filter(
         (movie)=>{
             return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1
+        }).sort((a,b)=>{
+            return a.id < b.id ? 1 : a.id > b.id ? -1 : 0
         })
         return (
             <Router>
@@ -96,7 +99,7 @@ class Common extends React.Component{
 
                             <MovieList
                                 movies={filteredMovie}
-                                deleteMovie={this.deleteMovie} />
+                                deleteMovieProp={this.deleteMovie} />
                         </>
                     )}>
                     </Route>
@@ -109,6 +112,8 @@ class Common extends React.Component{
                         />
                     )}>
                     </Route>
+
+                    <Route path="/edit/:id" component={EditMovie}/>
                 </Switch>
             </div>
         </Router>
