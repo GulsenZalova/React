@@ -1,8 +1,7 @@
 import EmployeeList from "./Components/EmployeeList"
+import EmployeeContextProvider from "./Contexts/EmployeeContext"
 
 function App() {
-
-
   return (
     <div className="App">
        <div className="container-xl">
@@ -18,7 +17,9 @@ function App() {
 					           </div>
 				          </div>
 		         </div>
+             <EmployeeContextProvider>
                 <EmployeeList/>
+              </EmployeeContextProvider>
            </div>
         </div>
       </div>
