@@ -56,9 +56,9 @@ table.table tr th, table.table tr td {
 	vertical-align: middle;
 }
 
-table.table tr th:last-child {
-	width: 100px;
-}
+/* table.table tr th:last-child {
+	width: 50px;
+} */
 table.table-striped tbody tr:nth-of-type(odd) {
 	background-color: #fcfcfc;
 }
@@ -72,7 +72,7 @@ table.table th i {
 }	
 table.table td:last-child i {
 	opacity: 0.9;
-	font-size: 22px;
+	font-size: 21px;
 	margin: 0 5px;
 }
 table.table td a {
