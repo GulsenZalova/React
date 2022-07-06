@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useEffect } from "react"
 import { useContext } from "react"
 import {Form,Button} from "react-bootstrap"
 import { EmployeeContext } from "../Contexts/EmployeeContext"
@@ -16,6 +17,7 @@ const AddForm=()=>{
         addrees:"",
         phone:""
     })
+
     const handleSubmit=(e)=>{
         e.preventDefault() 
          addEmployees(name,email,addrees,phone)

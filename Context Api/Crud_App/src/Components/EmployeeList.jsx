@@ -4,6 +4,7 @@ import {EmployeeContext} from "../Contexts/EmployeeContext"
 import { Modal,Button} from "react-bootstrap"
 import AddForm from "./AddForm"
 import { useState } from "react"
+import { useEffect } from "react"
 
 
 const EmployeeList = () =>{
@@ -11,6 +12,10 @@ const EmployeeList = () =>{
  const [show,setShow]=useState(false)
  const handleShow=()=>setShow(true)
  const handleClose=()=>setShow(false)
+
+ useEffect(()=>{
+    handleClose()
+ },[employees])
     return(
     <>
         <div className="table-title">
