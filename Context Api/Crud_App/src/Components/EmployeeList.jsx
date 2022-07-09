@@ -79,7 +79,7 @@ const EmployeeList = () =>{
         <Modal show={show} onHide={handleClose}>
             <Modal.Header className="modal-header" closeButton>
                 <Modal.Title>
-                    Add new Employee
+                    Add New Employee
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>

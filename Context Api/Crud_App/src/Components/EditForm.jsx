@@ -36,7 +36,7 @@ const EditForm=({theEmployee})=>{
        <Form.Group className="mb-3">
             <Form.Control type="text" placeholder="Phone *"  name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
        </Form.Group>
-       <Button variant="success" type="submit" block  > EditEmployee</Button>
+       <Button variant="success" type="submit" block  > Edit Employee</Button>
       </Form>
     )
 }
